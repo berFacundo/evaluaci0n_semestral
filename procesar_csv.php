@@ -54,7 +54,6 @@ function procesarViento($archivo) {
     $conteoPorFecha = [];
 
     while (($row = fgetcsv($archivo, 1000, ";")) !== false) {
-        // Formato: 2020-01-02 21:00;Aeropuerto Melilla G3;119;17
         $fechaHora = $row[0];
         $estacion = $row[1];
         $dirViento = isset($row[2]) ? $row[2] : 0;
@@ -133,7 +132,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['csv']) && isset($_PO
 
     // Intenta abrir el archivo CSV para lectura
     if (($archivo = fopen($file, "r")) !== false) {
-        fgetcsv($archivo, 1000, ";"); // Salta la primera línea (cabecera)
+        fgetcsv($archivo, 1000, ";"); // Salta la primera línea
 
         switch ($tipo) {
             case "temperatura":
