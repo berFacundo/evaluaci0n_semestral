@@ -1,42 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Subida de Archivos</title>
-    <link rel="stylesheet" href="estilos/subir_csv.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="subir_csv.css">
+    <title>Subir CSV</title>
 </head>
 
 <body>
-    <div class="margen">
-        <div class="contenedor">
-            <form action="procesar_csv.php" method="post" enctype="multipart/form-data">
-                <h2>Subida de archivos CSV</h2>
-                <br>
-                <section class="inputs">
-                    <label for="archivo">Seleccione un archivo:</label><br>
-                    <div class="mb-3">
-                        <input class="form-control" type="file" id="archivo" name="archivo" required>
-                    </div>
-                    <label for="">Seleeccione el tipo de dato</label>
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</option>
-                        <option value="1">Temperatura</option>
-                        <option value="2">Lluvia</option>
-                        <option value="3">Viento</option>
-                        <option value="4">Humedad</option>
-                    </select>
-                </section>
-                <input class="boton-submit" type="submit" value="Subir Archivo">
-            </form>
-        </div>
-    </div>
+    <form action="procesar_csv.php" method="post" enctype="multipart/form-data">
+        <h1>Subir archivo CSV</h1>
+        <input type="file" name="csv" accept=".csv"s required> <br><br>
+        <select name="tipo" required>
+            <option value="" selected>Seleccione el tipo de dato</option>
+            <option value="temperatura">Temperatura</option>
+            <option value="viento">Viento</option>
+            <option value="humedad">Humedad</option>
+            <option value="precipitacion">Precipitación</option>
+        </select> <br><br>
+        <button type="submit">Subir y procesar</button>
+    </form>
 </body>
 
 </html>

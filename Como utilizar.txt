@@ -1,0 +1,3 @@
+- Colocar en la carpeta de htdocs de XAMPP
+- Iniciar Apache en XAMPP
+- Colocar en el navegador: localhost/evaluaci0n_semestral/index.html
